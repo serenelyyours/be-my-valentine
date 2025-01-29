@@ -1,7 +1,10 @@
 function openEnvelope() {
-    document.querySelector(".envelope").classList.add("open");
+    let envelope = document.querySelector(".envelope");
+    let letter = document.querySelector(".letter");
+
+    envelope.classList.add("open");
     setTimeout(() => {
-        document.querySelector(".letter").classList.add("show");
+        letter.classList.add("show");
     }, 1000);
 }
 
