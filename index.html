@@ -8,15 +8,17 @@
 </head>
 <body>
 
-    <!-- Envelope -->
-    <div class="envelope" onclick="openEnvelope()"></div>
-
-    <!-- Hidden Letter -->
-    <div class="letter">
-        Will you be my Valentine? 💖  
-        <div class="button-container">
-            <button class="yes-button" onclick="sayYes()">Yes! 😊</button>
-            <button class="no-button" onclick="moveNoButton()">No 😢</button>
+    <div class="container" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="body"></div>
+        </div>
+        <div class="letter">
+            <p>Will you be my Valentine? 💖</p>
+            <div class="button-container">
+                <button class="yes-button" onclick="sayYes()">Yes! 😊</button>
+                <button class="no-button" onclick="moveNoButton()">No 😢</button>
+            </div>
         </div>
     </div>
 
