@@ -8,25 +8,51 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Envelope animation */
-.envelope {
-    width: 200px;
-    height: 150px;
-    background: red;
+/* Container to hold everything */
+.container {
     position: relative;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
-    transition: transform 1s ease-in-out;
+    width: 250px;
+    height: 180px;
     cursor: pointer;
 }
 
-.envelope.open {
-    transform: translateY(-120px);
+/* Envelope */
+.envelope {
+    position: relative;
+    width: 250px;
+    height: 150px;
 }
 
-/* Letter inside */
+/* Envelope body */
+.body {
+    width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+    border-radius: 10px;
+}
+
+/* Envelope flap */
+.flap {
+    width: 100%;
+    height: 100px;
+    background: red;
+    position: absolute;
+    top: 0;
+    transform-origin: top;
+    transition: transform 1s ease-in-out;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Open envelope animation */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+/* Letter */
 .letter {
     position: absolute;
-    width: 180px;
+    width: 230px;
     height: 120px;
     background: white;
     text-align: center;
@@ -37,6 +63,7 @@ body {
     border-radius: 5px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    top: -30px;
 }
 
 .letter.show {
@@ -46,7 +73,7 @@ body {
 /* Button styling */
 .button-container {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 button {
