@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffccd5;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Envelope animation */
+.envelope {
+    width: 200px;
+    height: 150px;
+    background: red;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+}
+
+.envelope.open {
+    transform: translateY(-120px);
+}
+
+/* Letter inside */
+.letter {
+    position: absolute;
+    width: 180px;
+    height: 120px;
+    background: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #d63384;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.letter.show {
+    opacity: 1;
+}
+
+/* Button styling */
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.yes-button {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no-button {
+    background: #6c757d;
+    color: white;
+    position: absolute;
+}
